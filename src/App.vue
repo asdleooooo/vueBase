@@ -1,8 +1,8 @@
 <template>
   <div>
-    <Heade/>
+    <Header/>
     <Add/>
-    <List/>
+    <List :comments="comments"/>
   </div>
 </template>
 
@@ -11,6 +11,27 @@ import Header from "@/components/Header.vue";
 import Add from  "@/components/Add.vue";
 import List from "@/components/List.vue";
 export default {
+  data(){
+    return {
+      comments:[
+        {
+          id:1,
+          content:'vue牛逼',
+          username:'Tom'
+        },
+        {
+          id:2,
+          content:'vue不错',
+          username:'Danny'
+        },
+        {
+          id:3,
+          content:'vue很nice',
+          username:'Jenny'
+        }
+      ],
+    }
+  },
   components:{
     Header,
     Add,

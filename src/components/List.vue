@@ -3,7 +3,7 @@
     <h3 class="reply">评论回复：</h3>
     <h2 style='display: none'>暂无评论，点击左侧添加评论！！！</h2>
     <ul class="list-group">
-      <Item/>
+      <Item v-for="comment in comments" :key="comment.id" :comment="comment"/>
     </ul>
   </div>
 </template>
@@ -11,6 +11,7 @@
 <script>
 import Item from "./Item.vue";
 export default {
+  props:["comments"],
   components:{
     Item,
   },
