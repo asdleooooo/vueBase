@@ -1,8 +1,8 @@
 <template>
   <div>
     <Header/>
-    <Add/>
-    <List :comments="comments"/>
+    <Add :addComment="addComment"/>
+    <List :comments="comments" :handleDelete="handleDelete"/>
   </div>
 </template>
 
@@ -36,6 +36,14 @@ export default {
     Header,
     Add,
     List
+  },
+  methods:{
+    addComment(comment){
+      this.comments.unshift(comment);
+    },
+    handleDelete(id){
+      this.comments.splice(id,1);
+    }
   }
 }
 </script>
