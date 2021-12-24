@@ -14,7 +14,7 @@ export default {
   methods:{
     deleteComment(){
       if(confirm("Are you sure you want to delete this comment?")){
-        handleDelete(this.index);
+        this.handleDelete(this.index);
       }
     }
   },

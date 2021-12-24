@@ -42,6 +42,7 @@ export default {
       this.comments.unshift(comment);
     },
     handleDelete(id){
+      console.log(id);
       this.comments.splice(id,1);
     }
   }

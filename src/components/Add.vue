@@ -40,6 +40,8 @@ export default {
         }
         // 把数据给添加给comments
         this.addComment(obj);
+        this.username = '';
+        this.content = '';
       }
       else{
         alert("请输入正确的用户名和评论");
