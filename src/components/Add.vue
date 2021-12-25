@@ -26,7 +26,7 @@ export default {
       content:''
     }
   },
-  props:["addComment"],
+  // props:["addComment"],
   methods:{
     addC(){
       // 获取这个数据
@@ -39,7 +39,9 @@ export default {
           content
         }
         // 把数据给添加给comments
-        this.addComment(obj);
+        // this.addComment(obj);
+        // 自定义事件的触发
+        this.$emit('addComment',obj);
         this.username = '';
         this.content = '';
       }

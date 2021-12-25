@@ -1,7 +1,13 @@
 <template>
   <div>
     <Header/>
-    <Add :addComment="addComment"/>
+    <!-- props父子之间通信 -->
+    <!-- <Add :addComment="addComment"/> -->
+    <!-- 自定义事件实现子组件向父组件通信 -->
+    <!-- <Add ref="aa"/> -->
+    <!-- 自定义事件的简单写法 -->
+    <Add @addComment="addComment"/>
+
     <List :comments="comments" :handleDelete="handleDelete"/>
   </div>
 </template>
@@ -45,7 +51,10 @@ export default {
       console.log(id);
       this.comments.splice(id,1);
     }
-  }
+  },
+  // mounted(){
+  //   this.$refs.aa.$on("addComment",this.addComment);
+  // },
 }
 </script>
 
